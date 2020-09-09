@@ -1,0 +1,23 @@
+
+    PROCEDURE swap(VAR xp, VAR yp : INTEGER)
+VAR
+    tmp : INTEGER;
+BEGIN
+    tmp := xp;
+    xp := yp;
+    yp := tmp;
+END
+    PROCEDURE tri(arr : ARRAY_OF INTEGER)
+    VAR
+        i,j,current:INTEGER;
+    BEGIN
+    FOR i FROM 0 TO arr.length-2 STEP 1  DO
+        current := i;
+        FOR j  FROM 0  TO arr.length-i-2 STEP 1  DO
+            IF (tab[j]<tab[current]) THEN
+                current := j;
+            END_IF
+        END_FOR
+        swap(arr[current],arr[i])
+    END_FOR
+    END
